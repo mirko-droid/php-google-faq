@@ -39,20 +39,25 @@ $db = [
         box-sizing: border-box;
     }
     body{
-    width: 100vw;
+        width: 100vw;
+        background: red;
     }
     .container{
         width: 80%;
+        margin: 0 auto;
         margin-top: 50px;
+        background: white;
+
     }
 
 </style>
 <body>
     <div class="container">
         <?php foreach ($db as $key => $value) { ;?>
-            <h2 <?php echo $value ;?>> </h2>
-            <p></p>
-        <?php} ?>
+            <h2><?php echo($value['domanda'])  ;?></h2>
+            <p><?php echo($value['risposta'])  ;?></p>
+
+        <?php } ?>
 
     </div>
 
