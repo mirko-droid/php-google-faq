@@ -27,29 +27,100 @@ $db = [
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Faq</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
 </head>
 <style>
     *{
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
     }
     body{
-        width: 100vw;
-        background: red;
+        max-width: 100%;
+    }
+    nav{
+        width: 95%;
+        padding-top: 20px;
+        margin: 0 auto;
+    }
+    header{
+        width: 100%;
+        border-bottom: 1px solid lightgrey;
     }
     .container{
         width: 80%;
         margin: 0 auto;
-        margin-top: 50px;
-        background: white;
     }
     h2{
         margin: 30px 0;
     }
-
+    h3{
+        color: #5f6368;
+    }
+   
+    .option_account .icon{
+        color: #5f6368;
+        padding-top: 5px;
+    }
+    .option_account .account{
+        color: white;
+        background: #01579b;
+        border-radius: 1rem;
+        padding: 3px 5px 0px 5px;
+    }
+    .nav-bar{
+        margin-top: 10px;
+    }
+    li{
+        list-style: none;
+        margin-right: 2rem;
+    }
+    li a{
+      text-decoration: none;
+      color: #5f6368;
+    }
+    .active{
+        padding-bottom: 2px;
+        border-bottom: 2px solid #01579b;
+    }
+    /* UTILITY CLASS */
+    .d-flex{
+        display: flex;
+    }
+    .just_cont_sp_bt{
+        justify-content: space-between;
+    }
+    .prl_20{
+        padding: 0 20px;
+    }
 </style>
+
 <body>
+    <header>
+        <nav>
+            <div class="nav-header d-flex just_cont_sp_bt">
+                <div class="logo d-flex">
+                    <img src="https://www.gstatic.com/images/branding/googlelogo/svg/googlelogo_clr_74x24px.svg" alt="logo">
+                    <h3>Privacy e termini</h3>
+                </div>
+                <div class="option_account d-flex ">
+                    <div class="icon prl_20">
+                        <i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i><i class="fas fa-ellipsis-v"></i>
+                    </div>
+                    <div class="account">M</div>
+                </div>
+            </div>
+            <div class="nav-bar">
+                <ul class='d-flex'>
+                    <li><a href="#">Introduzione</a></li>
+                    <li><a href="#">Norme sulla privacy</a></li>
+                    <li><a href="#">Termini di servizio</a></li>
+                    <li><a href="#">Tecnologie</a></li>
+                    <li class='active'><a href="#">Domande frequenti</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
     <div class="container">
         <?php foreach ($db as $value) { ;?>
             <h2>
