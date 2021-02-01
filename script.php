@@ -12,7 +12,7 @@ $db = [
         Nei prossimi mesi lavoreremo a stretto contatto con le autorità per la protezione dei dati e con altre autorità per perfezionare il nostro approccio. La decisione della CGUE rappresenta un cambiamento significativo per i motori di ricerca. Siamo preoccupati per le sue conseguenze, ma riteniamo anche che sia importante rispettare la decisione della Corte e ci stiamo adoperando per predisporre una procedura conforme alla legge.
         Quando cerchi un nome, potresti trovare una notifica in cui viene spiegato che i risultati potrebbero essere stati modificati nel rispetto delle leggi europee per la protezione dei dati. Mostriamo questa notifica agli utenti europei quando cercano la maggior parte dei nomi, non soltanto le pagine che sono state soggette a una rimozione.',
     ],
-    [
+ /*    [
         'domanda' => 'Come fa Google a proteggere la mia privacy e a tenere le mie informazioni al sicuro?',
         'risposta' => 'Sappiamo che la sicurezza e la privacy sono importanti per te e lo sono anche per noi. Per noi è imperativo offrire un\'elevata sicurezza e assicurarti che le tue informazioni sono al sicuro e accessibili quando ne hai bisogno.
 
@@ -21,9 +21,8 @@ $db = [
         Puoi leggere ulteriori informazioni sulla sicurezza online, incluso come proteggere te e la tua famiglia online, nel Centro Google per la sicurezza online.
         
         Scopri quali misure adottiamo per garantire protezione e sicurezza alle tue informazioni personali, lasciando a te il controllo.',
-    ]
+    ] */
 ];
-
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -53,10 +52,18 @@ $db = [
 </style>
 <body>
     <div class="container">
-        <?php foreach ($db as $key => $value) { ;?>
-            <h2><?php echo($value['domanda'])  ;?></h2>
-            <p><?php echo($value['risposta'])  ;?></p>
-
+        <?php foreach ($db as $value) { ;?>
+            <h2>
+                <?php echo($value['domanda'])  ;?>
+            </h2>
+            <?php 
+                $textParag = explode('.', $value['risposta']);
+            ;?>
+                <?php foreach ($textParag as $value) {?>
+                    <p>
+                        <?php echo $value ?>
+                    </p>
+                    <?php }?>
         <?php } ?>
 
     </div>
